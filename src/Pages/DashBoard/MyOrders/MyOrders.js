@@ -5,6 +5,7 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Button from "@restart/ui/esm/Button";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../../Hooks/useAuth";
 
@@ -18,6 +19,22 @@ const MyOders = () => {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
+
+  // Delete Item
+  const handleDelete = (id) => {
+    const url = `http://localhost:5000/myOrders/${id}`;
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          alert("deleted successfully");
+          const remainingOrder = orders.filter((order) => order._id !== id);
+          setOrders(remainingOrder);
+        }
+      });
+  };
   return (
     <div>
       <h4>
@@ -32,6 +49,7 @@ const MyOders = () => {
               <TableCell>Item Name</TableCell>
               <TableCell align="right">Item Price</TableCell>
               <TableCell align="right">Item ID</TableCell>
+              <TableCell align="right">Cancel Order</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -45,6 +63,15 @@ const MyOders = () => {
                 </TableCell>
                 <TableCell align="right">{order.price}</TableCell>
                 <TableCell align="right">{order._id}</TableCell>
+                <TableCell align="right">
+                  <Button
+                    onClick={() => handleDelete(order._id)}
+                    className="btn btn-danger"
+                  >
+                    {" "}
+                    Cancel
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
