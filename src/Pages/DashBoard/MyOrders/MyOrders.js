@@ -22,7 +22,7 @@ const MyOders = () => {
 
   // Delete Item
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/myOrders/${id}`;
+    const url = `https://frozen-forest-53567.herokuapp.com/myOrders/${id}`;
     fetch(url, {
       method: "DELETE",
     })
