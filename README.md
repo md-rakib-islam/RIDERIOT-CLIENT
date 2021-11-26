@@ -4,10 +4,6 @@
 
 ## My website Link is : https://rkbicycle-bd007.web.app/
 
-### Login id : rakib.islam0000@gmail.com
-
-### Pass: 123456
-
 ### Login id : admin@admin.com
 
 ### Pass: 123456
@@ -18,7 +14,7 @@ We’re a bike shop, a family and a team of riders, helping folks in New York ex
 
 ### Addintional options
 
-- This is one kind of eccommerce websit
+- This is one kind of eccommerce website
 - Login/Register System
 - Admin Panal
 - Most Commonlly userfriendly
