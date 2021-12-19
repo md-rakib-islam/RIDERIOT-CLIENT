@@ -18,3 +18,6 @@ We’re a bike shop, a family and a team of riders, helping folks in New York ex
 - Login/Register System
 - Admin Panal
 - Most Commonlly userfriendly
+
+#### Technology has been used: HTML, CSS, Bootstrap, MaterialUI, ReactJS, NodeJS, MongoDB and some react library
+
